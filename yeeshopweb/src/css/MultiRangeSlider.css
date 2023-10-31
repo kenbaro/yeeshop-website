@@ -1,0 +1,22 @@
+/* Custom Style for MultiRangeSlider
+    author: Thai Duy Bao
+    since: 2023
+*/
+
+.input-range__track {
+    --color-be1e2d : #be1e2d;
+    background-color: var(--color-be1e2d) !important;
+}
+.input-range__slider {
+    --color-be1e2d : #be1e2d;
+    background: var(--color-be1e2d) !important;
+    border: 1px solid var(--color-be1e2d) !important;
+}
+
+.input-range__label--max {
+    display: none !important;
+}
+
+.input-range__label--min {
+    display: none !important;
+}

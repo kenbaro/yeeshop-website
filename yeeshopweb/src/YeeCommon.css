@@ -1,0 +1,276 @@
+/**
+* Common Css is the file that help set some common style.
+* @author Thai Duy Bao
+* filename: YeeCommon.css
+* since 2023
+*/
+
+/* Start width percent */
+:root {
+    --color-ff5e00: #ff5e00;
+    --color-131921: #131921;
+    --color-3b4149: #3b4149;
+    --color-febd69: #febd69;
+    --color-232f3e: #232f3e;
+    --color-bf4800: #bf4800;
+    --color-f5f5f7: #f5f5f7;
+    --color-ededed: #ededed;
+    --color-777777: #777777;
+    --color-1c1c1b: #1c1c1b;
+    --color-e7e7e7: #e7e7e7;
+    --color-be1e2d: #be1e2d;
+    --color-white: #fff;
+  }
+.yee-wd-5 { width: 5%;}
+.yee-wd-10 { width: 10%;}
+.yee-wd-15 { width: 15%;}
+.yee-wd-20 { width: 20%;}
+.yee-wd-25 { width: 25%;}
+.yee-wd-30 { width: 30%;}
+.yee-wd-35 { width: 35%;}
+.yee-wd-40 { width: 40%;}
+.yee-wd-45 { width: 45%;}
+.yee-wd-50{ width: 50%;}
+.yee-wd-55 { width: 55%;}
+.yee-wd-60 { width: 60%;}
+.yee-wd-65 { width: 65%;}
+.yee-wd-70 { width: 70%;}
+.yee-wd-75 { width: 75%;}
+.yee-wd-80 { width: 80%;}
+.yee-wd-85 { width: 85%;}
+.yee-wd-90 { width: 90%;}
+.yee-wd-95 { width: 95%;}
+.yee-wd-100 { width: 100%;}
+/* Start width percent */
+
+/* Start height percent */
+.yee-ht-5 {height: 5%;}
+.yee-ht-10 {height: 10%;}
+.yee-ht-15 {height: 15%;}
+.yee-ht-20 {height: 20%;}
+.yee-ht-25 {height: 25%;}
+.yee-ht-30 {height: 30%;}
+.yee-ht-35 {height: 35%;}
+.yee-ht-40 {height: 40%;}
+.yee-ht-45 {height: 45%;}
+.yee-ht-50 {height: 50%;}
+.yee-ht-55 {height: 55%;}
+.yee-ht-60 {height: 60%;}
+.yee-ht-65 {height: 65%;}
+.yee-ht-70 {height: 70%;}
+.yee-ht-75 {height: 75%;}
+.yee-ht-80 {height: 80%;}
+.yee-ht-85 {height: 85%;}
+.yee-ht-90 {height: 90%;}
+.yee-ht-95 {height: 95%;}
+.yee-ht-100 {height: 100%;}
+/* Start height percent */
+
+/* Start height percent */
+.yee-ht-4px {height: 4px !important;}
+.yee-ht-8px {height: 8px !important;}
+.yee-ht-16px {height: 16px !important;}
+.yee-ht-24px {height: 24px !important;}
+.yee-ht-36px {height: 36px !important;}
+.yee-ht-48px {height: 48px !important;}
+/* Start height percent */
+
+/* Start font-size of text */
+.text-10{font-size: 10px !important;}
+.text-12{font-size: 12px !important;}
+.text-14{font-size: 14px !important;}
+.text-16{font-size: 16px !important;}
+.text-18{font-size: 18px !important;}
+.text-20{font-size: 20px !important;}
+.text-24{font-size: 24px !important;}
+/* End font-size of text */
+
+/* Start text align */
+.yee-text-align-center {
+    text-align: center;
+}
+/* End text align */
+
+/* Start text bold */
+.yee-text-fw-bold {
+    font-weight: 600 !important;
+}
+/* End text bold */
+
+/* Start Border */
+.yee-br-none {
+    border-radius: 0px !important;
+}
+.yee-br-1px{
+    border-radius: 1px !important;
+}
+.yee-br-2px{
+    border-radius: 2px !important;
+}
+.yee-br-3px{
+    border-radius: 3px !important;
+}
+.yee-br-4px{
+    border-radius: 4px !important;
+}
+.yee-br-5px{
+    border-radius: 5px !important;
+}
+.yee-br-6px{
+    border-radius: 6px !important;
+}
+.yee-br-7px{
+    border-radius: 7px !important;
+}
+.yee-br-8px{
+    border-radius: 8px !important;
+}
+
+.yee-br-round {
+    border-radius: 50% !important;
+}
+.yee-br-b-none {
+    border-bottom: none !important;
+}
+/* End Border */
+
+/* Start background */
+.yee-bg-transparent {
+    background-color: transparent !important;
+}
+/* End background */
+
+/*  Start margin */
+.yee-mr-16 {
+    margin-right: 16px;
+}
+/*  End margin */
+
+/* Color Start */
+.color-white {
+    color: var(--color-white) !important;
+}
+
+.color-777777 {
+    color: var(--color-777777) !important;
+}
+.color-primary {
+    --yee-bg-opacity: 1;
+    color: rgb(190 30 45/var(--yee-bg-opacity)) !important;
+}
+.color-link {
+    --yee-text-opacity: 1;
+    color: rgb(47 128 237/var(--yee-text-opacity));
+}
+/* Color End */
+/* Background-Color Start */
+
+.bg-primary {
+    --yee-bg-opacity: 1;
+    background-color: rgb(190 30 45/var(--yee-bg-opacity)) !important;
+}
+/* Background-Color End */
+/* Boder-Color Start */
+
+.border-primary {
+    --yee-bg-opacity: 1;
+    border: 1px solid rgb(190 30 45/var(--yee-bg-opacity)) !important;
+}
+/* Boder-Color End *
+/* Line Break */
+
+.line-break-auto {
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.line-break-loose {
+    line-break: loose;
+}
+
+.line-break-normal {
+    line-break: normal;
+}
+
+.line-break-strict {
+    line-break: strict;
+}
+
+.line-break-anywhere {
+    line-break: anywhere;
+}
+
+/* End Line Break */
+
+/* setting radio button */
+.radio-btn {
+    cursor: pointer;
+}
+input[type='radio'] {
+    
+    display: none;
+}
+/* end  */
+
+/* table */
+
+.table tr {
+    border-color: transparent;
+}
+.table tr {
+    border-color: transparent;
+}
+/* end table */
+
+/* start required label*/
+.yee-required label {
+    display: block;
+}
+.yee-required label:after {
+    padding: 4px;
+    content:"*" !important;
+    color:red !important;
+}
+/* end required label*/
+
+.gr-12 {
+    width: 100%;
+}
+.gr-6 {
+    width: 49%;
+}
+.gr-4 { 
+    width: 32%;
+}
+.gr-3 {
+    width: 24%;
+}
+.gr-5 {
+    width: 20%;
+}
+
+.yee-flx-col {
+    flex: 0 0 auto;
+    width: 20%;
+}
+/* Start Yee price*/
+
+.yee-old-price {
+
+color: var(--color-777777);
+font-size: 14px;
+text-decoration-line : line-through;
+}
+
+.yee-new-price {
+
+font-weight: 600;
+--yee-bg-opacity: 1;
+color: rgb(190 30 45/var(--yee-bg-opacity)) !important;
+}
+
+/* End Yee Price*/

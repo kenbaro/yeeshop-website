@@ -1,0 +1,21 @@
+/**
+* WishListButton style
+* @author Thai Duy Bao
+* filename: WishListButton.css
+* since 2023
+*/
+
+.wish-list-button {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    background-color: transparent;
+    --tw-bg-opacity: 1;
+    color: #fff;
+    border: 2px solid rgb(190 30 45/var(--tw-bg-opacity));
+    border-radius: 50%;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: opacity 0.2s ease-in-out;
+}
