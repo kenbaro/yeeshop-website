@@ -11,6 +11,8 @@ import "slick-carousel/slick/slick-theme.css";
 import { getHomeApi } from "../api/HomeApi";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { ToastContainer } from "react-toastify";
+import YeeLoader from "../components/YeeLoader";
 
 const catesObj = [
   {
@@ -71,83 +73,10 @@ const catesObj = [
   },
 ];
 
-const specialProducts = [
-  {
-    spId: "sp01",
-    spImg:
-      "https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080008025_frame_44.png",
-    spNm: "Samsung Galaxy Z Flip5",
-  },
-  {
-    spId: "sp02",
-    spImg:
-      "https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080017284_frame_48.png",
-    spNm: "iPhone 14 Pro Max",
-  },
-  {
-    spId: "sp03",
-    spImg:
-      "https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080026359_frame_45.png",
-    spNm: "Samsung Galaxy Z Fold5",
-  },
-  {
-    spId: "sp04",
-    spImg:
-      "https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080217166_frame_32.png",
-    spNm: "Macbook Air M1",
-  },
-  {
-    spId: "sp05",
-    spImg:
-      "https://cdn-v2.didongviet.vn/files/page/2023/7/31/0/1693464688879_mophie.png",
-    spNm: "Củ Sạc Mophie 30W",
-  },
-  {
-    spId: "sp06",
-    spImg:
-      "https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080117034_frame_30.png",
-    spNm: "OPPO Reno10",
-  },
-  {
-    spId: "sp07",
-    spImg:
-      "https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080182719_frame_25.png",
-    spNm: "iPad Gen 9 2021",
-  },
-  {
-    spId: "sp08",
-    spImg:
-      "https://cdn-v2.didongviet.vn/files/page/2023/7/31/0/1693464532753_honorr_x6a.png",
-    spNm: "HONOR X6a",
-  },
-  {
-    spId: "sp09",
-    spImg:
-      "https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080035324_frame_43.png",
-    spNm: "iPhone 13",
-  },
-  {
-    spId: "sp10",
-    spImg:
-      "https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080107411_frame_41.png",
-    spNm: "iPhone 12 ProMax",
-  },
-  {
-    spId: "sp11",
-    spImg:
-      "https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080206349_frame_46.png",
-    spNm: "Samsung Galaxy S21 FE",
-  },
-  {
-    spId: "sp12",
-    spImg:
-      "https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080098197_frame_24.png",
-    spNm: "Xiaomi Redmi Note 12",
-  },
-];
 const Home = () => {
 
   const [grid, setGrid] = useState(5);
+  const [loading,setLoading] = useState(false);
   const [homeForm,setHomeForm] = useState({});
   const settings = {
     dots: false,
@@ -180,24 +109,25 @@ const Home = () => {
     variableWidth: false,
   };
 
-  const getDemo = async () => {
-
+  const getHome = async () => {
+    setLoading(true);
     await getHomeApi().then(
       res => {
 
         const data = res.data;
+        console.log(res.data);
         setHomeForm(data)
       }
     ).catch(
       err => {
         console.log("err:  " + err);
       }
-    )
+    ).finally(() => setLoading(false))
 
   };
   useEffect(() => {
              
-    getDemo();
+    getHome();
   }, []);
 
   return (
@@ -260,27 +190,7 @@ const Home = () => {
           </div>
         </div>
       </Container>
-      <Container class1="home-wrapper-2 pt-5 pb-2">
-        <div className="row">
-          {specialProducts.map((image, index) => (
-            <div key={index} className="col-sm col-md">
-              <div className="d-flex justify-content-between flex-wrap align-items-center my-3">
-                <div key={index} className="d-flex flex-column pt-1">
-                  <img
-                    className="yee-wd-75 yee-ht-75 mx-auto"
-                    src={image.spImg}
-                    alt={image.spNm}
-                  />
-                  <span className="text-12 yee-text-align-center yee-text-fw-bold">
-                    {image.spNm}
-                  </span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Container>
-      <Container class1="home-wrapper-2 pb-2 yee-bg-transparent">
+      <Container class1="home-wrapper-2 py-2 mt-4 yee-bg-transparent">
         <div className="row">
           <div className="col-sm col-md p-0 yee-br-4px">
             <Slider {...settingLongSliders}>
@@ -299,8 +209,33 @@ const Home = () => {
           </div>
         </div>
       </Container>
-      {homeForm.homeComponentDtos && homeForm.homeComponentDtos.map((homeComponentDto,index1) => null !== homeComponentDto.products && index1 < 2 && (
-
+      {homeForm.homeComponentDtos && homeForm.homeComponentDtos.map((homeComponentDto,index1) => null !== homeComponentDto.products && [] !== homeComponentDto.products && index1 < 2 && (
+        <Container key = {index1} class1="featured-wrapper pb-2 home-wrapper-2">
+          <div className="row pt-3">
+            <div className="col-4">
+              <div className="section-heading text-24">
+                {homeComponentDto.componentTitle}
+              </div>
+            </div>
+            <div className="col-8">
+              <div className="d-flex justify-content-end">
+                {homeComponentDto.homeProductSeries && homeComponentDto.homeProductSeries.toReversed().map((homeProductSerie, index2) => index2 < 4 && (
+                    <Link key={index2} to="#!" className="button">
+                      {homeProductSerie.productSerieNm}
+                    </Link>
+                  ))}
+                <Link to="#!" className="button">
+                  Xem tất cả
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <ProductCard grid={grid} products={homeComponentDto.products ? homeComponentDto.products : []}/>
+          </div>
+        </Container>
+      ))}
+      {homeForm.homeComponentDtos && homeForm.homeComponentDtos.map((homeComponentDto,index1) => null !== homeComponentDto.products && [] !== homeComponentDto.products && index1 >= 2 && (
         <Container key = {index1} class1="featured-wrapper pb-2 home-wrapper-2">
           <div className="row pt-3">
             <div className="col-4">
@@ -345,32 +280,6 @@ const Home = () => {
           </div>
         </div>
       </Container>
-      {homeForm.homeComponentDtos && homeForm.homeComponentDtos.map((homeComponentDto,index1) => null !== homeComponentDto.products && [] !== homeComponentDto.products && index1 > 2 && (
-        <Container key = {index1} class1="featured-wrapper pb-2 home-wrapper-2">
-          <div className="row pt-3">
-            <div className="col-4">
-              <div className="section-heading text-24">
-                {homeComponentDto.componentTitle}
-              </div>
-            </div>
-            <div className="col-8">
-              <div className="d-flex justify-content-end">
-                {homeComponentDto.homeProductSeries && homeComponentDto.homeProductSeries.toReversed().map((homeProductSerie, index2) => index2 < 4 && (
-                    <Link key={index2} to="#!" className="button">
-                      {homeProductSerie.productSerieNm}
-                    </Link>
-                  ))}
-                <Link to="#!" className="button">
-                  Xem tất cả
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <ProductCard grid={grid} products={homeComponentDto.products ? homeComponentDto.products : []}/>
-          </div>
-        </Container>
-      ))}
       <Container class1="marque-wrapper home-wrapper-2 pb-2">
         <div className="row">
           <div className="col-12">
@@ -391,7 +300,7 @@ const Home = () => {
         </div>
       </Container>
 
-      <Container class1="blog-wrapper home-wrapper-2">
+      {/* <Container class1="blog-wrapper home-wrapper-2">
         <div className="row pt-3">
           <div className="col-6">
             <div className="section-heading text-24">Blogs Mới Nhất</div>
@@ -418,7 +327,19 @@ const Home = () => {
             <BlogCard />
           </div>
         </div>
-      </Container>
+      </Container> */}
+      <ToastContainer
+         position="top-right"
+         autoClose={2500}
+         hideProgressBar={false}
+         newestOnTop={true}
+         closeOnClick
+         rtl={false}
+         pauseOnFocusLoss
+         draggable
+         theme="light"
+       />
+       <YeeLoader loading={loading}/>
     </>
   );
 };

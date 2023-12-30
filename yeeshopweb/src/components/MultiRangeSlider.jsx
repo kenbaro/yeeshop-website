@@ -16,6 +16,7 @@ class MultiRangeSlider extends Component {
 
   handleSliderChange = (values) => {
     this.setState({ values });
+    this.props.onChange({values});
   };
 
   render() {

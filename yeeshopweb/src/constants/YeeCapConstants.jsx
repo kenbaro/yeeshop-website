@@ -17,6 +17,7 @@ export const YeeCap = {
 
     FULLNM:{
         EMPTY_NM: "Họ và tên không được để trống !",
+        SPECIAL_CHAR_NM: "Họ tên không được chứa ký tự đặc biệt",
     },
     PHONE: {
         EMPTY_PHONE: "Số điện thoại không được để trống",
@@ -39,7 +40,14 @@ export const YeeCap = {
         NOT_SPECIAL_CHAR: /^[A-Za-z0-9]+$/,
         NOT_PHONE_NUMBER: /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/
 
-    }
+    },
+    ADDRESS: {
+        EMPTY_ADDRESS: "Địa chỉ không được bỏ trống !",
+    },
+    OTP: {
+        EMPTY: "Mã OTP không được rỗng",
+        LENGTH_6: "Mã OTP là mã gồm 6 chữ số",
+    },
 }
 
 export const YeeUI = {
@@ -53,6 +61,7 @@ export const YeeUI = {
         LOGIN_FORGOT_PW: "Quên mật khẩu?",
         LOGIN_SIGNUP: "Đăng Ký",
         SIGN_OUT: "Đăng xuất",
+        LOGIN_SIGNUP_NOW: "Đăng ký ngay",
     },
     YEE_CAP_SIGNUP : {
         SIGN_UP_TITLE: "Đăng ký",
@@ -60,7 +69,7 @@ export const YeeUI = {
         SIGN_UP_YOUR_INFO: "Thông tin của bạn",
         SIGN_UP_YOUR_PW: "Mật khẩu của bạn",
         SIGN_UP_FULL_NM: "Họ tên:",
-        SIGN_UP_PHONE: "Số điện thoại",
+        SIGN_UP_PHONE: "SĐT:",
         SIGN_UP_CONFIRM_PW: "Xác nhận mật khẩu",
     }
 }

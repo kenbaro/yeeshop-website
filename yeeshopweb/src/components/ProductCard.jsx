@@ -19,10 +19,10 @@ const ProductCard = (props) => {
           <Link
             to={`${
               location.pathname ==="/"
-                ? "/product/:id"
-                : location.pathname === "/product/:id"
-                ? "/product/:id"
-                : ":id"
+                ? "/product/"+product.productCd
+                : location.pathname === "/product/:SKU"
+                ? "/product/"+product.productCd
+                : "/product/"+product.productCd
             }`}
             state={{SKU: product.productCd}}
             className="product-card position-relative"
@@ -35,8 +35,8 @@ const ProductCard = (props) => {
               }
             </div>
             <div className="product-image mt-5">
-              <img src={product.productImg} className="img-fluid" alt={product.productDiscount.productNm} />
-              <img src={product.productImg} className="img-fluid" alt={product.productDiscount.productNm} />
+              <img src={product.productImg} width={200} className="" alt={product.productNm} />
+              <img src={product.productImg} width={200} className="" alt={product.productNm} />
             </div>
             <div className="product-details mt-1">
               <h6 className="brand">{product.brandNm}</h6>
@@ -57,22 +57,11 @@ const ProductCard = (props) => {
                 <span>
                   <span className="price yee-new-price color-primary">{product.productDiscountPrice}</span>&nbsp;<span className="price yee-old-price">{product.productUnitPrice}</span>
                 </span>
-                
               }
               {product.productDiscount <= 0 && 
                 <span className="price yee-new-price color-primary">{product.productUnitPrice}</span>
               }
             </div>
-            {/* <div className="action-bar position-absolute">
-              <div className="d-flex flex-column gap-15">
-                <button className="border-0 bg-transparent">
-                  <img src={view} alt="view" />
-                </button>
-                <button className="border-0 bg-transparent">
-                  <img src={addcart} alt="addcart" />
-                </button>
-              </div>
-            </div> */}
           </Link>
         </div>
       ))}

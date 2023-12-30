@@ -3,7 +3,7 @@ import { YEE_TOKEN } from '../constants/YeeConst';
 import jwt_decode from 'jwt-decode';
 
 const Instance = axios.create({
-    baseURL: "http://localhost:9090",
+    baseURL: "http://192.168.1.21:9090",
     headers:{
         "Content-Type" : "application/json",
         'Access-Control-Allow-Origin' : '*',

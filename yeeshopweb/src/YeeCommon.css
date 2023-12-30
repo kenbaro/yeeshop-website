@@ -47,6 +47,7 @@
 .yee-ht-5 {height: 5%;}
 .yee-ht-10 {height: 10%;}
 .yee-ht-15 {height: 15%;}
+.yee-ht-17 {height: 17%;}
 .yee-ht-20 {height: 20%;}
 .yee-ht-25 {height: 25%;}
 .yee-ht-30 {height: 30%;}
@@ -66,14 +67,25 @@
 .yee-ht-100 {height: 100%;}
 /* Start height percent */
 
-/* Start height percent */
+/* Start height pixel */
 .yee-ht-4px {height: 4px !important;}
 .yee-ht-8px {height: 8px !important;}
 .yee-ht-16px {height: 16px !important;}
 .yee-ht-24px {height: 24px !important;}
 .yee-ht-36px {height: 36px !important;}
 .yee-ht-48px {height: 48px !important;}
-/* Start height percent */
+/* End height pixel */
+
+/* Start height pixel */
+.yee-wd-4px {width: 4px !important;}
+.yee-wd-8px {width: 8px !important;}
+.yee-wd-16px {width: 16px !important;}
+.yee-wd-24px {width: 24px !important;}
+.yee-wd-36px {width: 36px !important;}
+.yee-wd-48px {width: 48px !important;}
+.yee-wd-100px {width: 100px !important;}
+.yee-wd-184px {width: 184px !important;}
+/* End height pixel */
 
 /* Start font-size of text */
 .text-10{font-size: 10px !important;}
@@ -143,6 +155,10 @@
 /*  Start margin */
 .yee-mr-16 {
     margin-right: 16px;
+}
+
+.yee-ml-16 {
+    margin-left: 16px;
 }
 /*  End margin */
 
@@ -273,4 +289,43 @@ font-weight: 600;
 color: rgb(190 30 45/var(--yee-bg-opacity)) !important;
 }
 
+.disable { 
+    pointer-events: none; 
+    opacity: 0.6;
+}
+
+.row-disable > td:not(.td-not-disable) {
+
+    pointer-events: none; 
+    opacity: 0.6;
+}
+
+.yee-pointer {
+
+    cursor: pointer;
+}
 /* End Yee Price*/
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.bg-fb{
+    background-color: #4267b2;
+}
+.color-fb {
+    color: #4267b2;
+}
+
+table.dataTable > thead > tr {
+
+    background-color: #777777;
+}

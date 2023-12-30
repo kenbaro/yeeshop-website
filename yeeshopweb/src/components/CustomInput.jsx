@@ -1,7 +1,7 @@
 import React from "react";
 
 const CustomInput = (props) => {
-  const { type, name, placeholder, className, id, onChange, autoComplete, title, value } = props;
+  const { type, name, placeholder, className, id, onChange, autoComplete, title, value, maxlength } = props;
   return (
     <div>
       <input
@@ -14,6 +14,7 @@ const CustomInput = (props) => {
         autoComplete={autoComplete}
         title = {title}
         value = {value}
+        maxLength = {maxlength}
       />
     </div>
   );

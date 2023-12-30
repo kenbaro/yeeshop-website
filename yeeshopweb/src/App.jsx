@@ -24,7 +24,14 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import BackToTopButton from './components/BackToTopButton';
 import WishListButton from './components/WishListButton';
+import PaymentReturn from './components/PaymentReturn';
 import { YEE_PATH,} from "./constants/YeeConst";
+import TrackingOrder from "./pages/TrackingOrder";
+import OAuth2Redirect from "./pages/OAuth2Redirect";
+import MyOrders from "./pages/MyOrders";
+import ActiveUser from "./pages/ActiveUser";
+import ChangeInfo from "./pages/ChangeInfo";
+import ChangePassword from "./pages/ChangePassword";
 function App() {
 
   return (
@@ -36,11 +43,11 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
             <Route path="product" element={<OurStore />} />
-            <Route path="product/:id" element={<SingleProduct />} />
+            <Route path="product/:SKU" element={<SingleProduct />} />
             <Route path="blogs" element={<Blog />} />
             <Route path="blog/:id" element={<SingleBlog />} />
             <Route path="cart" element={<Cart />} />
-            <Route path="checkout" element={<Checkout />} />
+            <Route path="/checkout/:id" element={<Checkout />}/>
             <Route path="compare-product" element={<CompareProduct />} />
             <Route path="wishlist" element={<Wishlist />} />
             <Route path={YEE_PATH.LOGIN_PATH} element={<Login/>}/>
@@ -51,6 +58,13 @@ function App() {
             <Route path="refund-policy" element={<RefundPloicy />} />
             <Route path="shipping-policy" element={<ShippingPolicy />} />
             <Route path="term-conditions" element={<TermAndContions />} />
+            <Route path="order-return/:orderId" element={<PaymentReturn />} />
+            <Route path="tracking-order" element={<TrackingOrder />} />
+            <Route path='/oauth2/redirect' element={<OAuth2Redirect />} />
+            <Route path='/my-orders' element={<MyOrders />} />
+            <Route path='/send-otp/:email' element={<ActiveUser />} />
+            <Route path='/user-info' element={<ChangeInfo />} />
+            <Route path='/change-password' element={<ChangePassword />} />
           </Route>
         </Routes>
       </BrowserRouter>

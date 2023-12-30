@@ -9,6 +9,7 @@
 import React, { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 const YeeModal = (props) => {
 
     const data = props.modalProps;
@@ -58,6 +59,10 @@ const YeeModal = (props) => {
                                     {data.errTitle}
                                 </span>
                                 <p>{data.errMessage}</p>
+
+                                {data.errId === "KICHHOAT" &&
+                                    <Link className="button mb-4" to={`/send-otp/${data.mail}`} state={{valid:false}} > Đồng ý</Link>
+                                }
                             </div>
                         </div>
                     </div>
